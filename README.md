@@ -44,6 +44,6 @@ I performed the same steps as in Part 1, including joining the boundaries and ex
 
 ![MapBox P2](https://user-images.githubusercontent.com/104933711/170837943-63381a69-f7a6-48c3-b600-7f409878100e.png)
 
-## Finished map
+## Final map
 
 My final map for the 2017 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q6jlb2000n15l30cp8x5uo.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
