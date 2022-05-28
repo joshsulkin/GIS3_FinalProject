@@ -24,7 +24,7 @@ While the French government provided data for the election results by départeme
 
 I then exported the merged data file as a GeoJSON to import it into MapBox, changing the CRS to 4326 instead of the CRS 2154 that minimizes the distortion for France and its colonies. After visualizing the data in MapBox, I made the red signify only the data up to 50% support for Macron, followed by white and then blue, indicating much stronger support for Macron.
 
-![MapBox](https://user-images.githubusercontent.com/104933711/170836309-106ec068-c834-4d88-bdcf-abd80609f50b.png)
+![MapBox](https://user-images.githubusercontent.com/104933711/170836397-3751875e-ba0a-449f-a564-2c8f2c0cd17b.png)
 
 ## Final Map
 
