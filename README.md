@@ -38,7 +38,7 @@ My final map for the 2022 French Presidential Election on MapBox can be found he
 
 I also got the data from the 2017 French Presidential Election from the French Government's website: https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-23-avril-et-7-mai-2017-resultats-definitifs-du-2nd-tour/#resources
 
-## How I made it
+## How I made the map
 
 I performed the same steps as in Part 1, including joining the boundaries and excel files, importing to Mapbox, and so on. However, I simply made a copy of the first MapBox map and replaced the data. While I had to adjust the choropleth settings again, it was much easier this time since I had already decided on the colors scheme I liked, and I wanted to ensure that the maps were the same stylistically to make comparisons between the maps easier.
 
@@ -47,3 +47,25 @@ I performed the same steps as in Part 1, including joining the boundaries and ex
 ## Final map
 
 My final map for the 2017 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q6jlb2000n15l30cp8x5uo.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
+
+# PART 3: 2012 PRESIDENTIAL ELECTION (HOLLANE V. SARKOZY)
+
+In 2012, François Hollande ran and won as the first Socialist president of France against incumbent President Nicolas Paul Stéphane Sarközy de Nagy-Bocsa, a member of the conservative party. I am including Hollande's victory to demonstrate how far to the right France has come since electing a socialist president in 2012.
+
+# MapBox Interactive Map
+
+## Data source
+
+The 2012 data were extremely difficult to find. The French Government's data site said it provided the data, but in reality, it was not downloadable. I eventually found some data by department, but I had to manually input all of the data into a spreadsheet from this website (https://www.lexpress.fr/actualite/politique/elections/presidentielle-2012/resultats-elections/france.html). 
+
+Since I do not want anyone to have to do that again, the data I used with the percentage of voters who cast a ballot for François Hollande can be downloaded here (https://uchicagoedu-my.sharepoint.com/:x:/g/personal/josh23_uchicago_edu/EVarHfFvm2dJiDrUyVvsBh8BbQsLngCN3j0-6MbAJDJrlA?e=5BDs38). 
+
+## How I made the map
+
+I performed the same steps as in Part 1, including joining the boundaries and excel files, importing to Mapbox, and so on. However, I simply made a copy of the first MapBox map and replaced the data. While I had to adjust the choropleth settings again, it was much easier this time since I had already decided on the colors scheme I liked, and I wanted to ensure that the maps were the same stylistically to make comparisons between the maps easier.
+
+![MapBox 3](https://user-images.githubusercontent.com/104933711/170840700-88882354-610d-4562-b8c2-748af99a02ac.png)
+
+## Final map
+
+My final map for the 2012 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q74ldk005614rw3a5qmf4p.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.01/46.907/3.349
