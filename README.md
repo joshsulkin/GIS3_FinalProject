@@ -34,6 +34,10 @@ My final map for the 2022 French Presidential Election on MapBox can be found he
 
 # MapBox Interactive Map
 
+## Data source
+
+I also got the data from the 2017 French Presidential Election from the French Government's website: https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-23-avril-et-7-mai-2017-resultats-definitifs-du-2nd-tour/#resources
+
 ## How I made it
 
 I performed the same steps as in Part 1, including joining the boundaries and excel files, importing to Mapbox, and so on. However, I simply made a copy of the first MapBox map and replaced the data. While I had to adjust the choropleth settings again, it was much easier this time since I had already decided on the colors scheme I liked, and I wanted to ensure that the maps were the same stylistically to make comparisons between the maps easier.
