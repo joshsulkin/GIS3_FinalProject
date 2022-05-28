@@ -1,4 +1,4 @@
-# GIS3_FinalProject
+# The 2022, 2017, and 2012 French Presidential Elections
 
 Want to better understand the 2022 French Presidential Election? How about putting in context with other French presidential elections? Here is how I created some maps to address these questions!
 
