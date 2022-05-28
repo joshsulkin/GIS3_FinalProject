@@ -8,11 +8,11 @@ Want to better understand the 2022 French Presidential Election? How about putti
 
 ## Download data from the French Government's website
 
-I downloaded the Excel file entitled "resultats-par-niveau-dpt-t2-france-entiere.xlsx" from the French Government's [data website]([url](https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-2nd-tour/#resources)).
+I downloaded the Excel file entitled "resultats-par-niveau-dpt-t2-france-entiere.xlsx" from the French Government's data website at https://www.data.gouv.fr/fr/datasets/election-presidentielle-des-10-et-24-avril-2022-resultats-definitifs-du-2nd-tour/#resources
 
 ## Download boundary data from the European Environmental Agency
 
-I downloaded the boundary data matching the level of scale of the French Government's data (the _département_) from the [European Environmental Agency]([url](https://www.eea.europa.eu/data-and-maps/data/external/france-administrative-boundaries)).
+I downloaded the boundary data matching the level of scale of the French Government's data (the _département_) from the European Environmental Agency at https://www.eea.europa.eu/data-and-maps/data/external/france-administrative-boundaries
 
 ## Merge government and boundary data
 
