@@ -4,7 +4,7 @@ Want to better understand the 2022 French Presidential Election? How about putti
 
 # PART 1: 2022 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
 
-# Extract
+# MapBox Interactive Map
 
 ## Download data from the French Government's website
 
