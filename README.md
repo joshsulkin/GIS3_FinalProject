@@ -1,6 +1,6 @@
 # The 2022, 2017, and 2012 French Presidential Elections
 
-Want to better understand the 2022 French Presidential Election? How about putting in context with other French presidential elections? Here is how I created some maps to address these questions!
+Want to better understand the 2022 French Presidential Election? How about putting in context with other French presidential elections? Here is how I created some maps to address these questions! As a brief note, French Presidents are elected to five-year terms and are elected by only the popular vote. In other words, there is no "Electoral College" or unnatural weighting of votes; the winner is simply determined based on the raw number of votes.
 
 # PART 1: 2022 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
 
@@ -30,4 +30,16 @@ I then exported the merged data file as a GeoJSON to import it into MapBox, chan
 
 My final map for the 2022 French Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q3154s002215qy6vopkvlv.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
 
-# 
+# PART 2: 2017 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
+
+# MapBox Interactive Map
+
+## How I made it
+
+I performed the same steps as in Part 1, including joining the boundaries and excel files, importing to Mapbox, and so on. However, I simply made a copy of the first MapBox map and replaced the data. While I had to adjust the choropleth settings again, it was much easier this time since I had already decided on the colors scheme I liked, and I wanted to ensure that the maps were the same stylistically to make comparisons between the maps easier.
+
+![MapBox P2](https://user-images.githubusercontent.com/104933711/170837943-63381a69-f7a6-48c3-b600-7f409878100e.png)
+
+## Finished map
+
+My final map for the 2017 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q6jlb2000n15l30cp8x5uo.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
