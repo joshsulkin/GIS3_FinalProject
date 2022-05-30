@@ -91,6 +91,43 @@ I performed the same steps as in Part 1, including joining the boundaries and ex
 
 My final map for the 2017 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q6jlb2000n15l30cp8x5uo.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
 
+# Population-Weighted Cartogram
+
+## Data Source
+
+I got the data from https://www.insee.fr/fr/statistiques/1893198, which are directly from the French Government, as it notes on the website.
+
+## How I created it
+
+I merged the population data with my CSV file containing the _département_ boundaries in QGIS, exported as a GeoJSON, imported into R using the st_read function, and then viewed the data to see the column headings.
+
+```{r}
+Election2017pop <- st_read("/Users/jls/GEOG28602/Final\ Project/2017macronNpop.geojson")
+head(Election2017pop)
+```
+
+Then, I made a contiguous cartogram for French _départements_ using the data for 2017.
+
+```{r}
+names(Election2017pop)[13] <- 'Population'
+FrenchDepts2017 <- st_transform(Election2017pop, 2154)
+Cartogram2017 <- cartogram_cont(FrenchDepts2017, "Population", itermax=5)
+tm_shape(Cartogram2017) + tm_polygons("Population") + 
+  tm_compass(type = "arrow", position = c("left", "top")) +
+  tm_scale_bar(breaks = c(0, 100, 200), text.size = 1, position = "left") +
+  tm_layout(frame = FALSE, 
+            legend.outside = TRUE,
+            legend.outside.position = 'right',
+            legend.title.size = 0.9,
+            main.title = '2017 Cartogram of Population by Department, by Josh Sulkin',
+            main.title.size = 0.9,
+            aes.palette = list(seq = "-plasma"))
+```
+
+## Final Map
+
+![Screen Shot 2022-05-30 at 12 51 49 AM](https://user-images.githubusercontent.com/104933711/170925689-48eae465-5da0-4fc7-9383-6cebaafa74dd.png)
+
 # PART 3: 2012 PRESIDENTIAL ELECTION (HOLLANE V. SARKOZY)
 
 In 2012, François Hollande ran and won as the first Socialist president of France against incumbent President Nicolas Paul Stéphane Sarközy de Nagy-Bocsa, a member of the conservative party. I am including Hollande's victory to demonstrate how far to the right France has come since electing a socialist president in 2012.
