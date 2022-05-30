@@ -30,6 +30,48 @@ I then exported the merged data file as a GeoJSON to import it into MapBox, chan
 
 My final map for the 2022 French Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q3154s002215qy6vopkvlv.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.54/47.959/3.026
 
+# Population-Weighted Cartogram
+
+Importantly, the French Presidential election does not depend on departments or any other geographic element to help determine the relative voting power of one constituency in France over another. In other words, _départements_ are not like U.S. states with an equivalent to the Electoral College. French voters are weighted equally. However, in the interest of providing context for just how many people live in each of the departments that I used in the MapBox maps, I sought to create a population-weighted cartogram for each presidential election year.
+
+## Data Source
+
+It should be noted that the 2022 population data are estimates from https://www.insee.fr/fr/statistiques/1893198. All of the data besides the 2022 data are directly from the French Government, as it notes on the website.
+
+## How I created it
+
+I merged the population data with my CSV file containing the _département_ boundaries in QGIS, exported as a GeoJSON, imported into R using the st_read function, and then viewed the data to see the column headings.
+
+```{r}
+Election2022pop <- st_read("/Users/jls/GEOG28602/Final\ Project/new2022macronNpop.geojson")
+head(Election2022pop)
+```
+
+Seeing that the data was not in a uniform CRS and that R did not allow for the CRS to be 4326, I changed the CRS to EPSG:2154 because it is optimized for France and its colonies.
+
+```{r}
+FrenchDepts <- st_transform(Election2022pop, 2154)
+```
+
+Then, after hours of struggling, I made a contiguous cartogram for French _départements_ using the latest and greatest population estimates for 2022.
+
+```{r}
+Cartogram2022 <- cartogram_cont(FrenchDepts, "Population", itermax=5)
+tm_shape(Cartogram2022) + tm_polygons("Population") + 
+  tm_compass(type = "arrow", position = c("left", "top")) +
+  tm_scale_bar(breaks = c(0, 100, 200), text.size = 1, position = "left") +
+  tm_layout(frame = FALSE, 
+            legend.outside = TRUE,
+            legend.outside.position = 'right', 
+            legend.title.size = 0.9,
+            main.title = '2022 Cartogram of Population by Department, by Josh Sulkin',
+            main.title.size = 0.9,
+            aes.palette = list(seq = "-plasma"))
+```
+
+![Screen Shot 2022-05-30 at 12 07 36 AM](https://user-images.githubusercontent.com/104933711/170920786-876f7f88-68d6-453f-98f4-0008a0021a7a.png)
+
+
 # PART 2: 2017 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
 
 # MapBox Interactive Map
