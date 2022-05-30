@@ -149,3 +149,45 @@ I performed the same steps as in Part 1, including joining the boundaries and ex
 ## Final map
 
 My final map for the 2012 Presidential Election on MapBox can be found here: https://api.mapbox.com/styles/v1/jls2023/cl3q74ldk005614rw3a5qmf4p.html?title=view&access_token=pk.eyJ1IjoiamxzMjAyMyIsImEiOiJjbDM2Y2k5YmMwYjhqM2pudmNhd3ZqNnIzIn0.Wg-1UgUi2U3QuSPMN1-BUQ&zoomwheel=true&fresh=true#6.01/46.907/3.349
+
+# Population-Weighted Cartogram
+
+## Data Source
+
+I got the data from https://www.insee.fr/fr/statistiques/1893198, which are directly from the French Government, as it notes on the website.
+
+## How I created it
+
+I merged the population data with my CSV file containing the _département_ boundaries in QGIS, exported as a GeoJSON, imported into R using the st_read function, and then viewed the data to see the column headings.
+
+```{r}
+Election2012pop <- st_read("/Users/jls/GEOG28602/Final\ Project/2012macronNpop.geojson")
+head(Election2012pop)
+```
+
+Then, I made a contiguous cartogram for French _départements_ using the data for 2012.
+
+```{r}
+names(Election2012pop)[13] <- 'Population'
+FrenchDepts2012 <- st_transform(Election2012pop, 2154)
+Cartogram2012 <- cartogram_cont(FrenchDepts2012, "Population", itermax=5)
+tm_shape(Cartogram2012) + tm_polygons("Population") + 
+  tm_compass(type = "arrow", position = c("left", "top")) +
+  tm_scale_bar(breaks = c(0, 100, 200), text.size = 1, position = "left") +
+  tm_layout(frame = FALSE, 
+            legend.outside = TRUE,
+            legend.outside.position = 'right',
+            legend.title.size = 0.9,
+            main.title = '2012 Cartogram of Population by Department, by Josh Sulkin',
+            main.title.size = 0.9,
+            aes.palette = list(seq = "-plasma"))
+```
+
+## Final Map
+
+![Screen Shot 2022-05-30 at 1 04 22 AM](https://user-images.githubusercontent.com/104933711/170927226-74126e6f-0f92-4185-95f1-b001e8865a38.png)
+
+# PART 4: PUTTING THE CARTOGRAMS TOGETHER
+
+In order to make the cartograms easier to understand and compare across the years, I decided to make a GIF out of all of the cartograms using R.
+
