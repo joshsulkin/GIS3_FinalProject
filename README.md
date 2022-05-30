@@ -69,7 +69,7 @@ tm_shape(Cartogram2022) + tm_polygons("Population") +
             aes.palette = list(seq = "-plasma"))
 ```
 
-![Screen Shot 2022-05-30 at 12 07 36 AM](https://user-images.githubusercontent.com/104933711/170920786-876f7f88-68d6-453f-98f4-0008a0021a7a.png)
+![Screen Shot 2022-05-30 at 12 08 11 AM](https://user-images.githubusercontent.com/104933711/170920846-4c615554-f710-4311-8042-970c0e38a8f1.png)
 
 
 # PART 2: 2017 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
