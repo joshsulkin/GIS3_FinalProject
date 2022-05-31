@@ -1,3 +1,7 @@
+# Coding Walkthrough
+
+This document explores my process for creating the maps for this project.
+
 # PART 1: 2022 PRESIDENTIAL ELECTION (MACRON V. LE PEN)
 
 # MapBox Interactive Map
